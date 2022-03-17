@@ -7,7 +7,6 @@ Author: Seth Mckenzie
 School: CHHS
 Course: Computer Science 10
  
-
 */
 
 package Assignments;
