@@ -36,8 +36,9 @@ public class PizzaCost
 
 	
 Enter the diameter of the pizza in inches:
-10
-The cost of making the pizza is: $4.25
+1
+The cost of making the pizza is: $2.0
+
 	
 
 */
