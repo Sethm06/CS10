@@ -39,6 +39,5 @@ Enter the diameter of the pizza in inches:
 1
 The cost of making the pizza is: $2.0
 
-	
 
 */
