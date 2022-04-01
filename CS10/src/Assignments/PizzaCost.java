@@ -31,6 +31,7 @@ public class PizzaCost
 	    System.out.println("The cost of making the pizza is: " + "$" + (diameter * 0.5 * 0.5 + 1 + 0.75));  // Output user input
 	    
 	 }
+  
 }
 /* Screen Dump
 
