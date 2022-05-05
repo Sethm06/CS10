@@ -52,7 +52,7 @@ public class GUI2 {
 		panel.setLayout(null);
 		
 		JLabel dis = new JLabel("");
-		dis.setBounds(21, 144, 83, 14);
+		dis.setBounds(21, 190, 445, 140);
 		panel.add(dis);
 		
 		twoD = new JTextField();
@@ -62,7 +62,13 @@ public class GUI2 {
 		
 		JButton cb = new JButton("Clear");
 		cb.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
+			public void actionPerformed(ActionEvent e) 
+			{
+				
+				dis.setText(null);
+				
+				twoD.setText(null);
+				
 			}
 		});
 		cb.setBounds(114, 106, 89, 52);
@@ -77,14 +83,30 @@ public class GUI2 {
 			public void actionPerformed(ActionEvent e) 
 			{
 				
-				String twoDigit = twoD.getText();
-				int twoD = Integer.parseInt(twoDigit);
+				String twoDigit = twoD.getText(); //record two digits
 				
-				int firstD = twoD / 10;
+				int twoD = Integer.parseInt(twoDigit); //translate to integer 
 				
-				//int sum =
+				int firstD = twoD / 10; //record first digit
+				int secondD = twoD % 10; //record second digit
 				
-				dis.setText(""+firstD);
+				
+				int sum = firstD + secondD; //record sum
+				
+				int prdc = firstD * secondD; //record product
+				
+				int check = sum + prdc;
+						
+				if(check == twoD) 
+				{
+					 dis.setText(twoD + " is a special two digit number");
+				}
+				else
+				{
+					 dis.setText(twoD + " is a not special two digit number");
+				}
+				
+				//dis.setText(""+sum + "" + prdc); //display data
 				
 			}
 		});

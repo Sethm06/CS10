@@ -11,13 +11,17 @@ import javax.swing.JRadioButton;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import javax.swing.JComboBox;
+import javax.swing.DefaultComboBoxModel;
+import javax.swing.*;
 
 public class Credit4GUI {
 
 	private JFrame frame;
 	private JTextField fn;
 	private JTextField ln;
-	private JTextField ag;
+	
+	ImageIcon img1 = new ImageIcon("C:\\Users\\16076006\\git\\CS10\\Credit4\\src\\Java.jpg");
 
 	/**
 	 * Launch the application.
@@ -45,14 +49,15 @@ public class Credit4GUI {
 	/**
 	 * Initialize the contents of the frame.
 	 */
-	private void initialize() {
+	private void initialize() 
+	{
 		frame = new JFrame();
-		frame.setBounds(100, 100, 504, 516);
+		frame.setBounds(100, 100, 769, 531);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
 		JPanel panel = new JPanel();
-		panel.setBounds(0, 0, 487, 476);
+		panel.setBounds(10, 11, 733, 470);
 		frame.getContentPane().add(panel);
 		panel.setLayout(null);
 		
@@ -75,17 +80,21 @@ public class Credit4GUI {
 		panel.add(ln);
 		
 		JLabel dis = new JLabel("");
-		dis.setBounds(24, 255, 450, 115);
+		dis.setBounds(284, 179, 397, 199);
 		panel.add(dis);
 		
-		JLabel agl = new JLabel("Age");
+		JLabel agl = new JLabel("Grade");
 		agl.setBounds(24, 116, 65, 33);
 		panel.add(agl);
 		
-		ag = new JTextField();
-		ag.setColumns(10);
-		ag.setBounds(84, 116, 190, 33);
-		panel.add(ag);
+		JComboBox g2 = new JComboBox();
+		g2.setModel(new DefaultComboBoxModel(new String[] {"10", "11", "12"}));
+		g2.setBounds(84, 116, 190, 33);
+		panel.add(g2);
+		
+		JLabel pic = new JLabel("");
+		pic.setBounds(24, 179, 250, 199);
+		panel.add(pic);
 		
 		JButton sb = new JButton("Submit");
 		sb.addActionListener(new ActionListener() 
@@ -94,9 +103,26 @@ public class Credit4GUI {
 			{
 				String FN = fn.getText();
 				String LN = ln.getText();
-				String AG = ag.getText();
+				int grade;
 				
-				dis.setText("First name: " + FN + ". Last name: " + LN + ". Age: " + AG);
+				if(g2.getSelectedItem().equals("10"))
+				{
+					grade = 10;
+					pic.setIcon(img1);
+				}
+				else if(g2.getSelectedItem().equals("11"))
+				{
+					grade = 11;
+					GUI3 k = new GUI3();
+				}
+				else
+				{
+					grade = 12;
+				}
+				
+					
+				
+				dis.setText("First name: " + FN + ". Last name: " + LN + ". grade: " + grade);
 				
 			}
 		});
@@ -110,7 +136,6 @@ public class Credit4GUI {
 				
 				fn.setText(" ");
 				ln.setText(" ");
-				ag.setText(" ");
 				
 				dis.setText(" ");
 
@@ -119,5 +144,8 @@ public class Credit4GUI {
 		});
 		rs.setBounds(284, 72, 190, 33);
 		panel.add(rs);
+		
+		
+		
 	}
 }
