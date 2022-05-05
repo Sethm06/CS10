@@ -1,6 +1,6 @@
 /*
 
-Program: Assignment17       Date:04/05/2022
+Program: Assignment17       Date:05/05/2022
 
 
 Author: Seth Mckenzie 
@@ -26,6 +26,8 @@ public class Assignment17
 	  System.out.println("Please enter your Grade Point Average "
 			  + "(enter -1 to quite program): ");
 	  double gpa = usinp.nextDouble();
+	  
+	  //define boolean
 	  boolean programOFF = false;
 	  
 	  //Quit program?
