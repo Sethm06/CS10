@@ -165,35 +165,6 @@ public class Assignment17
 			  System.exit(0);
 		  }
 	  }
-	  
-	 	  
-	  
-	  
-	  
-	  
-	  
-	  
-	  
-	  /*Scanner usinp = new Scanner(System.in);
-	  
-	  System.out.println("Please enter your name: ");
-	  String usname = usinp.nextLine();
-	  
-	  //usinp.next();//flush the next.() method
-	  System.out.println("Please enter your password that "
-	  + "is at least 5 characters long: ");
-	  String password = usinp.next();
-	  
-	  while(password.length() < 5)
-	  {
-		  System.out.println("Please re-enter a password "
-		  + "that is 5 or more characters: ");
-		  password = usinp.next();
-	  }
-	  
-	  System.out.println("Your name is: " + usname);
-	  System.out.println("Your password is: " + password);*/
-	  
   }
   
 }
@@ -203,7 +174,28 @@ public class Assignment17
 /* Screen Dump
 
 
-
+Please enter your Grade Point Average (enter -1 to quite program): 
+3.8
+Summa cum laude
+Do you want to enter another Grade Point Average (press 1 for yes, press 2 for no)?
+1
+Please enter your Grade Point Average (enter -1 to quite program): 
+3.65
+Magna cum laude
+Do you want to enter another Grade Point Average (press 1 for yes, press 2 for no)?
+1
+Please enter your Grade Point Average (enter -1 to quite program): 
+3.5
+Cum laude
+Do you want to enter another Grade Point Average (press 1 for yes, press 2 for no)?
+1
+Please enter your Grade Point Average (enter -1 to quite program): 
+2.5
+Sorry, at this you did not qualify for an honors distinction.
+Do you want to enter another Grade Point Average (press 1 for yes, press 2 for no)?
+2
+Closing program
+Thank you for using our program, have a great day!
 
 
 */
