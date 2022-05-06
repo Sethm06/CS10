@@ -19,7 +19,10 @@ public class JavaFinalProject
   public static void main(String[] args) 
   {
 	 
-	String truePassword = null; 
+	String truePassword = null;
+	String write = null;
+	boolean inAccount = false; 
+
 	 
 	//scanner make a password
 	Scanner askYN1 = new Scanner(System.in);
@@ -71,22 +74,138 @@ public class JavaFinalProject
 						Scanner askTypePassword = new Scanner(System.in);
 						System.out.println("Type in you password: ");
 						String typePassword = askTypePassword.next();
-						
+							
+							//accessed account
 							while(typePassword.equals(truePassword))
 							{
 								System.out.println("Welcome to your profile!");
+								System.out.println("");
 								System.out.println("Your name is " + name);
+								System.out.println("");
+								inAccount = true;
 								
-								//scanner close account?
-								Scanner askYN3 = new Scanner(System.in);
-								System.out.println("Want to create a sign out of your account? (y): ");
-								String YN3 = askYN3.next();
-								
-								if(YN3.equals("y") || YN3.equals("Y"))
+								while(inAccount = true)
 								{
-									System.out.println("Thank you for using this program!");
-									System.exit(0);
+									System.out.println("Here are some things you can do in your account:");
+									System.out.println("	- Addition\n	- Multiplacation\n	- Writing");
+	
+									
+									//scanner account tasks
+									Scanner askTasks = new Scanner(System.in);
+									System.out.println("What do you want to do? Type + for addition, * for multiplacation, write for writing, and  log out for logging out!");
+									String tasks = askTasks.next();
+									inAccount = false;
+									
+									//addition
+									if (tasks.equals("+"))
+									{
+										int addDigitOne = (int)(Math.random() * 100);
+										int addDigitTwo = (int)(Math.random() * 100);
+										
+										int addSolution = addDigitOne + addDigitTwo;
+										
+										//scanner ask solution?					
+										Scanner askAddSolutionInpt = new Scanner(System.in);
+										System.out.println("What is the solution to " + addDigitOne + " + " + addDigitTwo + "?");
+										int addSolutionInpt  = askAddSolutionInpt.nextInt();
+										
+										if(addSolutionInpt == addSolution)
+										{
+											System.out.println("You got it right!");
+											System.out.println("");
+											inAccount = true;
+										}
+										else if(addSolutionInpt != addSolution)
+										{
+											System.out.println("You got it wrong!");
+											System.out.println("");
+											inAccount = true;
+										}
+									}
+									
+									//multiplication 
+									if (tasks.equals("*"))
+									{
+										int multiDigitOne = (int)(Math.random() * 20);
+										int multiDigitTwo = (int)(Math.random() * 20);
+										
+										int multiProduct = multiDigitOne * multiDigitTwo;
+										
+										//scanner ask product?					
+										Scanner askMultiProductInpt = new Scanner(System.in);
+										System.out.println("What is the product to " + multiDigitOne + " * " + multiDigitTwo + "?");
+										int multiProductInpt  = askMultiProductInpt.nextInt();
+										
+										if(multiProductInpt == multiProduct)
+										{
+											System.out.println("You got it right!");
+											System.out.println("");
+											inAccount = true;
+										}
+										else if(multiProductInpt != multiProduct)
+										{
+											System.out.println("You got it wrong!");
+											System.out.println("");
+											inAccount = true;
+										}
+									}
+									
+									//writing 
+									if(tasks.equals("write"))
+									{	
+										
+										if(write != null)
+										{
+											//scanner load last writing?					
+											Scanner askLoadWrite = new Scanner(System.in);
+											System.out.println("Would you like to load your last writing? (y/n)");
+											String loadWrite  = askLoadWrite.next();
+											
+											if(loadWrite.equals("y") || loadWrite.equals("Y"))
+											{
+												System.out.println(write);
+												System.out.println("");
+											}
+											else if(loadWrite.equals("n") || loadWrite.equals("N"))
+											{
+												System.out.println("Ok.");
+											}
+										}
+										
+										//scanner write?					
+										Scanner askWrite = new Scanner(System.in);
+										System.out.println("Write what you want!");
+										write  = askWrite.next();
+										
+										System.out.println("Nice writing!");
+										
+										//scanner save writing?					
+										Scanner askYN3 = new Scanner(System.in);
+										System.out.println("Would you like to save it? (y/n)");
+										String YN3  = askYN3.next();
+										
+										if(YN1.equals("y") || YN1.equals("Y"))
+										{
+											System.out.println("Saving...");
+											System.out.println("Writing saved!");
+											inAccount = true;
+										}
+										else if(YN1.equals("n") || YN1.equals("N"))
+										{
+											System.out.println("Writing not saved.");
+											write = null;
+											inAccount = true;
+										}
+									}
+									
+									//log out
+									else if(tasks.equals("log out"))
+									{
+										System.out.println("Thank you for using this program!");
+										System.exit(0);
+									}
 								}
+							
 
 								
 							}
@@ -98,6 +217,13 @@ public class JavaFinalProject
 								typePassword = askTypePassword.next();
 							}
 						
+					}
+					
+					//don't access profile
+					while(YN2.equals("n") || YN1.equals("N"))
+					{
+						System.out.println("Thank you for using this program!");
+						System.exit(0);
 					}
 					  
 				  }
