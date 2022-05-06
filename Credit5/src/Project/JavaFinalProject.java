@@ -188,11 +188,13 @@ public class JavaFinalProject
 										{
 											System.out.println("Saving...");
 											System.out.println("Writing saved!");
+											System.out.println("");
 											inAccount = true;
 										}
-										else if(YN1.equals("n") || YN1.equals("N"))
+										if(YN1.equals("n") || YN1.equals("N"))
 										{
 											System.out.println("Writing not saved.");
+											System.out.println("");
 											write = null;
 											inAccount = true;
 										}
